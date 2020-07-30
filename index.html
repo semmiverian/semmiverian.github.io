@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My home page</title>
+  </head>
+
+  <body>
+    <h1 id="heading"><span>My home page</span></h1>
+    <p class="description">Hello, I am Marijn and this is my home page.</p>
+    <div class="description">
+      <p>I also wrote a book! Read it <a href="http://eloquentjavascript.net">here</a>.</p>
+    </div>
+
+    <button id="button">Tekan aku mas</button>
+
+    <input id="name" type="text"/>
+
+    <script type="text/javascript">
+      let a = 10
+      let heading = document.getElementById('heading')
+
+      // console.log(heading.innerText)
+      // heading.innerText = '<spam>Our home page</span>'
+
+      // console.log(heading.innerHTML)
+      heading.innerHTML = '<span>Our Home page</span>'
+      
+      heading.className = 'header'
+      heading.style.color = 'blueviolet'
+      heading.style.backgroundColor = 'aqua'
+
+      // background-color
+      // backgroundColor
+
+      // console.log(heading)
+
+      let allParagraph = document.getElementsByTagName('p')
+      // console.log(allParagraph)
+      
+      for (let i = 0; i < allParagraph.length; i++) {
+        allParagraph[i].style.color = 'teal'
+      }
+
+      let allDescription = document.getElementsByClassName('description')
+      
+
+      let button = document.getElementById('button')
+      // console.log(button)
+
+      let name = ''
+      button.addEventListener('click', function () {
+        console.log('Ketekan mas dengan nama', name)
+      })
+
+      let input = document.getElementById('name')
+
+      input.addEventListener('keyup', function (event) {
+        console.log('input berubah', event.target.value)
+        name = event.target.value
+      })
+
+
+      // Mengambil bapak dari element heading
+      // console.log(heading.parentElement)
+
+
+      // Anak dari sebuah element
+      // console.log(heading.children)
+
+      // alert('halo')
+      let value = prompt('Selamat datang silahkan masukkan nama anda')
+
+      console.log(value)
+
+      heading.innerText = `Selamat datang ${value}`
+    </script>
+
+  </body>
+</html>
